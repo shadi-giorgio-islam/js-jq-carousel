@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-  $('.next').click(pulsanteNext); //funzione di callback che parte dopo il click
+  $('.next').click(pulsanteNext);
+  
+  $('.prev').click(pulsantePrev);
 
   $('.nav i').click(function(){
     $('.nav i.active').removeClass('active');
@@ -8,16 +10,11 @@ $(document).ready(function(){
   });
 
 });
-
+// Pulsante next
 function pulsanteNext(){
 
-  // in questo modo non capisce più quale immagine è attiva
-  // $('.images img.active').removeClass('active');
-  // $('.images img.active').next().addClass('active');
-  
   var imgAttiva = $('.images img.active');
   console.log(imgAttiva);
-  //è importante usare la variabile
 
   var pallinoAttivo = $('.nav i.active');
 
@@ -30,6 +27,26 @@ function pulsanteNext(){
   if(imgAttiva.hasClass('last')){
     $('.images img.first').addClass('active');
     $('.nav i.first').addClass('active');
+  }
+
+}
+// Pulsante prev
+function pulsantePrev(){
+
+  var imgAttiva = $('.images img.active');
+  console.log(imgAttiva);
+
+  var pallinoAttivo = $('.nav i.active');
+
+  imgAttiva.removeClass('active');
+  imgAttiva.prev().addClass('active');
+
+  pallinoAttivo.removeClass('active');
+  pallinoAttivo.prev().addClass('active');
+
+  if(imgAttiva.hasClass('first')){
+    $('.images img.last').addClass('active');
+    $('.nav i.last').addClass('active');
   }
 
 }
