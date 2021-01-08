@@ -1,12 +1,15 @@
 $(document).ready(function(){
 
   $('.next').click(pulsanteNext);
-  
+
   $('.prev').click(pulsantePrev);
 
   $('.nav i').click(function(){
+    var index = $(this).index();
     $('.nav i.active').removeClass('active');
     $(this).addClass('active');
+    $('.images img.active').removeClass('active');
+    $('.images img').eq(index).addClass('active');
   });
 
 });
