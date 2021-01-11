@@ -4,10 +4,15 @@
     box-sizing: border-box;
     font-family: 'Lato';
 }
+body {
+  background-image: url('https://wallpaperaccess.com/full/241444.jpg');
+  background-size: cover;
+  background-position: center;
+}
 .container {
     display: flex;
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
     height: 100vh;
 }
 .slider-wrapper {
@@ -22,8 +27,8 @@
 }
 .slider-wrapper .images img {
     display: none;
-    height: 750px;
-    width: 1125px;
+    height: 800px;
+    width: 1200px;
 }
 .slider-wrapper .images img.active {
     display: inline-block;
@@ -56,4 +61,9 @@
 }
 .nav > i.active {
     color: blue;
+}
+
+.prev i:hover,
+.next i:hover {
+  color: blue;
 }
